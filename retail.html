@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Website Templates | Sunshine Coast Web Solutions</title>
+  <style>
+    :root { --bg:#111827; --card:#1f2937; --muted:#cbd5e1; --text:#f8fafc; --accent:#f59e0b; --accent-2:#ec4899; --light:#f8fafc; --dark:#0b1120; --border:rgba(255,255,255,.08); --shadow:0 20px 50px rgba(0,0,0,.25); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:linear-gradient(180deg, #020617 0%, #111827 100%); color:var(--text); line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1180px, calc(100% - 32px)); margin:0 auto; }
+    header { padding:22px 0; position:sticky; top:0; z-index:20; backdrop-filter:blur(10px); background:rgba(2,6,23,.78); border-bottom:1px solid var(--border); }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .brand { font-weight:700; letter-spacing:.5px; font-size:1.05rem; }
+    .brand span { color:var(--accent); }
+    .nav-links { display:flex; gap:18px; flex-wrap:wrap; color:var(--muted); font-size:.95rem; }
+    .hero { padding:72px 0 44px; }
+    .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:34px; align-items:center; }
+    .eyebrow { display:inline-block; padding:8px 14px; border:1px solid rgba(245,158,11,.35); background:rgba(245,158,11,.08); color:#fcd34d; border-radius:999px; font-size:.85rem; margin-bottom:18px; }
+    h1 { font-size:clamp(2rem, 5vw, 3.8rem); line-height:1.05; margin:0 0 16px; }
+    .hero p { color:var(--muted); font-size:1.05rem; max-width:700px; margin:0 0 24px; }
+    .btn-row { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:13px 18px; border-radius:12px; font-weight:700; transition:.2s ease; border:1px solid transparent; }
+    .btn-primary { background:var(--accent); color:#1f2937; }
+    .btn-secondary { border-color:var(--border); color:var(--light); background:rgba(255,255,255,.02); }
+    .btn:hover { transform:translateY(-1px); }
+    .hero-card { background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid var(--border); border-radius:24px; padding:22px; box-shadow:var(--shadow); }
+    .mini-site { background:#fff; color:#111827; border-radius:18px; overflow:hidden; min-height:360px; }
+    .mini-topbar { background:#111827; color:#fff; padding:14px 18px; display:flex; justify-content:space-between; font-size:.9rem; }
+    .mini-hero { background:linear-gradient(135deg, #f59e0b, #ec4899); color:white; padding:32px 24px; }
+    .mini-hero h3 { margin:0 0 10px; font-size:1.5rem; }
+    .mini-hero p { margin:0; opacity:.95; }
+    .mini-body { padding:22px 24px 28px; display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; }
+    .mini-box { background:#f3f4f6; border-radius:14px; min-height:90px; padding:14px; font-size:.9rem; color:#374151; font-weight:700; }
+    section { padding:24px 0 70px; }
+    .section-title { font-size:clamp(1.5rem, 3vw, 2.4rem); margin-bottom:10px; }
+    .section-copy { color:var(--muted); max-width:760px; margin-bottom:30px; }
+    .templates { display:grid; gap:26px; }
+    .template-card { background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:26px; overflow:hidden; box-shadow:var(--shadow); }
+    .template-info { padding:24px; border-bottom:1px solid var(--border); background:rgba(255,255,255,.03); }
+    .template-info h3 { margin:0 0 10px; font-size:1.45rem; }
+    .template-info p { margin:0; color:var(--muted); }
+    .tag-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    .tag { font-size:.82rem; padding:7px 10px; border-radius:999px; background:rgba(255,255,255,.06); color:#e2e8f0; border:1px solid rgba(255,255,255,.08); }
+    .mockup { padding:24px; background:#e5e7eb; }
+    .site { background:#fff; color:#111827; border-radius:20px; overflow:hidden; }
+    .site-header { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; font-weight:700; }
+    .site-nav { display:flex; gap:16px; flex-wrap:wrap; font-size:.92rem; color:#4b5563; }
+    .hero-a,.hero-b,.hero-c { color:white; padding:44px 24px; display:grid; gap:20px; align-items:center; }
+    .hero-a { background:linear-gradient(135deg, #111827 0%, #ec4899 100%); grid-template-columns:1.1fr .9fr; }
+    .hero-b { background:linear-gradient(135deg, #7c3aed, #ec4899); grid-template-columns:.95fr 1.05fr; }
+    .hero-c { background:linear-gradient(135deg, #7c2d12, #f59e0b); grid-template-columns:1fr 1fr; }
+    .hero-a h4,.hero-b h4,.hero-c h4 { font-size:clamp(1.5rem, 4vw, 2.4rem); margin:0 0 12px; line-height:1.1; }
+    .hero-a p,.hero-b p,.hero-c p { margin:0 0 18px; opacity:.92; font-size:1rem; }
+    .cta { display:inline-block; background:var(--accent); color:#111827; padding:12px 16px; border-radius:12px; font-weight:700; }
+    .image-block,.image-block-b,.image-block-c { min-height:220px; border-radius:20px; position:relative; overflow:hidden; }
+    .image-block { background:linear-gradient(135deg, rgba(236,72,153,.92), rgba(124,58,237,.92)); }
+    .image-block-b { background:linear-gradient(135deg, rgba(15,23,42,.95), rgba(76,29,149,.92)); }
+    .image-block-c { background:linear-gradient(135deg, rgba(254,215,170,.95), rgba(245,158,11,.9)); }
+    .image-block::before,.image-block-b::before,.image-block-c::before { content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px); background-size:18px 18px; }
+    .services,.features,.stats { padding:24px; display:grid; gap:16px; }
+    .services { grid-template-columns:repeat(3, 1fr); }
+    .features { grid-template-columns:repeat(4, 1fr); }
+    .stats { grid-template-columns:repeat(3, 1fr); }
+    .panel { background:#f3f4f6; border-radius:16px; padding:18px; }
+    .panel strong { display:block; margin-bottom:8px; font-size:1rem; }
+    .panel span { color:#4b5563; font-size:.92rem; }
+    .checklist { display:grid; gap:10px; margin-top:12px; font-weight:700; }
+    .footer-note { padding:0 0 70px; color:var(--muted); text-align:center; }
+    @media (max-width:900px) { .hero-grid,.hero-a,.hero-b,.hero-c { grid-template-columns:1fr; } .services,.features,.stats,.mini-body { grid-template-columns:1fr; } .site-nav { display:none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Sunshine Coast <span>Web Solutions</span></div>
+      <nav class="nav-links">
+        <a href="#template1">Boutique</a>
+        <a href="#template2">Fashion</a>
+        <a href="#template3">Homewares</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Retail Website Concepts</div>
+        <h1>See what your retail business website could look like.</h1>
+        <p>These are example designs for retail businesses across the Sunshine Coast. If you like a style below, I can build you a custom version with your products, branding, store details, and enquiry pathways—designed to make your business look polished and drive more interest.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#templates">View templates</a>
+          <a class="btn btn-secondary" href="index.html">Back to main site</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="mini-site">
+          <div class="mini-topbar"><span>Retail Site Preview</span><span>Shop • Enquire • Visit Store</span></div>
+          <div class="mini-hero"><h3>Websites built to make your brand stand out</h3><p>Clean, stylish layouts made for boutiques, product businesses, and local stores.</p></div>
+          <div class="mini-body"><div class="mini-box">Featured products</div><div class="mini-box">Store details + socials</div><div class="mini-box">Brand-led design</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="templates">
+    <div class="container">
+      <h2 class="section-title">Sample template styles</h2>
+      <p class="section-copy">Each example below shows how your retail business could look online. Everything can be customised to match your branding, products, and store vibe so customers trust you and want to buy from you.</p>
+      <div class="templates">
+        <article class="template-card" id="template1">
+          <div class="template-info"><h3>Template 1 — Boutique Retail Style</h3><p>Best for gift stores, boutiques, florists, and curated product businesses wanting a premium but approachable feel.</p><div class="tag-row"><span class="tag">Brand-led layout</span><span class="tag">Product highlights</span><span class="tag">Premium feel</span></div></div>
+          <div class="mockup"><div class="site"><div class="site-header"><div>Willow & Oak</div><div class="site-nav"><span>Home</span><span>New In</span><span>Collections</span><span>About</span><span>Visit Us</span></div></div><div class="hero-a"><div><h4>Curated pieces your customers will remember.</h4><p>A stylish retail homepage concept built to showcase products, build trust, and create a polished first impression.</p><a href="#" class="cta">Browse Collection</a></div><div class="image-block"></div></div><div class="services"><div class="panel"><strong>Featured products</strong><span>Highlight seasonal items and best sellers.</span></div><div class="panel"><strong>Brand story</strong><span>Help customers connect with your business.</span></div><div class="panel"><strong>Store visit CTA</strong><span>Drive customers into your physical location.</span></div></div></div></div>
+        </article>
+        <article class="template-card" id="template2">
+          <div class="template-info"><h3>Template 2 — Fashion Store Style</h3><p>Best for clothing stores, footwear brands, and modern retailers wanting a sleek visual-first design.</p><div class="tag-row"><span class="tag">Visual-first</span><span class="tag">Modern and sleek</span><span class="tag">Ideal for socials</span></div></div>
+          <div class="mockup"><div class="site"><div class="site-header"><div>Coastline Apparel</div><div class="site-nav"><span>Home</span><span>Women</span><span>Men</span><span>Lookbook</span><span>Shop</span></div></div><div class="hero-b"><div class="image-block-b"></div><div><h4>Turn casual browsers into paying customers.</h4><p>Strong visuals, featured collections, and clean product pathways designed to make the brand feel established.</p><a href="#" class="cta" style="background:#ffffff;color:#7c3aed;">Shop the Range</a><div class="checklist"><span>✔ Highlight new drops</span><span>✔ Showcase Instagram-style visuals</span><span>✔ Make buying easy</span></div></div></div><div class="features"><div class="panel"><strong>Lookbook sections</strong><span>Give the brand a polished lifestyle feel.</span></div><div class="panel"><strong>Best seller rows</strong><span>Push top products and key margins.</span></div><div class="panel"><strong>Social proof</strong><span>Feature reviews and styled customer photos.</span></div><div class="panel"><strong>Mobile shopping</strong><span>Built for customers browsing on their phones.</span></div></div></div></div>
+        </article>
+        <article class="template-card" id="template3">
+          <div class="template-info"><h3>Template 3 — Homewares / Lifestyle Store Style</h3><p>Best for homewares, decor stores, wellness shops, and product businesses wanting a warm, elevated look.</p><div class="tag-row"><span class="tag">Warm aesthetic</span><span class="tag">Lifestyle branding</span><span class="tag">Great for premium products</span></div></div>
+          <div class="mockup"><div class="site"><div class="site-header"><div>Harbour Living</div><div class="site-nav"><span>Collections</span><span>New Arrivals</span><span>Journal</span><span>About</span><span>Contact</span></div></div><div class="hero-c"><div><h4>Create a stronger online presence for your store.</h4><p>A warm, polished retail concept designed to make your products feel premium and your business look established.</p><a href="#" class="cta" style="background:#fff7ed;color:#9a3412;">Explore Products</a></div><div class="image-block-c"></div></div><div class="stats"><div class="panel"><strong>Collection pages</strong><span>Organise products into clean category sections.</span></div><div class="panel"><strong>Editorial feel</strong><span>Mix products with styled branding content.</span></div><div class="panel"><strong>Visit or enquire</strong><span>Drive store visits, DMs, and direct contact.</span></div></div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section><div class="container" style="text-align:center;"><h2 class="section-title">Like what you see?</h2><p class="section-copy" style="margin:0 auto 20px;">I can build a website just like this for your business—fully customised and ready to bring in new customers. Built within 3–5 days. Pay only when you're happy.</p><div class="btn-row" style="justify-content:center;"><a class="btn btn-primary" href="tel:0476078796">Call 0476 078 796</a><a class="btn btn-secondary" href="index.html#contact">Email Me</a></div></div></section>
+  <div class="container footer-note">These are sample concepts—your website will be fully customised to your business, products, and brand style.</div>
+</body>
+</html>
