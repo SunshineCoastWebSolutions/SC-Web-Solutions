@@ -17,8 +17,6 @@
       --line:#e7ddd2;
       --shadow:0 14px 40px rgba(31,41,55,.10);
       --radius:24px;
-      --success:#1e7a39;
-      --error:#b42318;
       --max:1180px;
     }
 
@@ -290,33 +288,106 @@
       gap:1rem;
     }
 
-    .portfolio-item{
+    .portfolio-link{
+      display:block;
+      position:relative;
       overflow:hidden;
       border-radius:24px;
       border:1px solid var(--line);
-      background:#fff;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.98), rgba(243,235,227,.95)),
+        linear-gradient(180deg, #fff, #f7f1ea);
       box-shadow:var(--shadow);
-      transition:.2s ease;
+      transition:.25s ease;
+      min-height:280px;
     }
 
-    .portfolio-item:hover{
-      transform:translateY(-3px);
+    .portfolio-link:hover{
+      transform:translateY(-5px);
+      box-shadow:0 18px 48px rgba(31,41,55,.14);
     }
 
-    .portfolio-item img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      cursor:pointer;
+    .portfolio-link::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(217,179,140,.24), transparent 35%),
+        linear-gradient(180deg, transparent 0%, rgba(139,94,60,.05) 100%);
+      pointer-events:none;
     }
 
-    .portfolio-copy{
-      padding:1rem 1rem 1.1rem;
+    .portfolio-link-inner{
+      position:relative;
+      z-index:1;
+      padding:1.4rem;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:1rem;
     }
 
-    .portfolio-copy p{
-      margin:.35rem 0 0;
+    .portfolio-tag{
+      display:inline-flex;
+      align-items:center;
+      padding:.45rem .75rem;
+      border-radius:999px;
+      background:#efe3d5;
+      color:var(--primary-dark);
+      font-size:.88rem;
+      font-weight:800;
+      width:max-content;
+    }
+
+    .portfolio-link h3{
+      margin:.2rem 0 .45rem;
+      font-size:1.3rem;
+      line-height:1.2;
+    }
+
+    .portfolio-link p{
+      margin:0;
       color:var(--muted);
+    }
+
+    .portfolio-preview{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:.5rem;
+      margin-top:.35rem;
+    }
+
+    .preview-block{
+      height:72px;
+      border-radius:14px;
+      background:
+        linear-gradient(180deg, rgba(139,94,60,.18), rgba(139,94,60,.06)),
+        #fff;
+      border:1px solid rgba(139,94,60,.12);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .preview-block::before{
+      content:"";
+      position:absolute;
+      left:10px;
+      right:10px;
+      top:12px;
+      height:8px;
+      border-radius:999px;
+      background:rgba(139,94,60,.18);
+      box-shadow:0 16px 0 rgba(139,94,60,.12), 0 32px 0 rgba(139,94,60,.09);
+    }
+
+    .portfolio-arrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      color:var(--primary-dark);
+      font-weight:800;
+      margin-top:.25rem;
     }
 
     .split{
@@ -594,34 +665,64 @@
     <section id="portfolio">
       <div class="container">
         <div class="section-heading">
-          <h2>Example work style</h2>
-          <p>I do not have previous client work displayed yet, so below are visual examples of the kind of clean, modern website style I can create for local businesses.</p>
+          <h2>Website examples</h2>
+          <p>Explore stylish sample builds tailored to different kinds of local businesses.</p>
         </div>
 
         <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Professional website concept for trades business" class="lightbox-trigger" />
-            <div class="portfolio-copy">
-              <strong> <a href="trade.html"Trades website concept</strong>
-              <p>Clear calls to action, trustworthy layout, and a mobile-friendly structure for service businesses.</p>
+          <a href="trade.html" class="portfolio-link">
+            <div class="portfolio-link-inner">
+              <div>
+                <span class="portfolio-tag">Service businesses</span>
+                <h3>Trades website</h3>
+                <p>Ideal for electricians, plumbers, builders, landscapers, and other local service businesses focused on calls and quote requests.</p>
+              </div>
+              <div>
+                <div class="portfolio-preview" aria-hidden="true">
+                  <div class="preview-block"></div>
+                  <div class="preview-block"></div>
+                  <div class="preview-block"></div>
+                </div>
+                <div class="portfolio-arrow">View example <span>→</span></div>
+              </div>
             </div>
-          </div>
+          </a>
 
-          <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1200&q=80" alt="Creative website concept for salon or studio" class="lightbox-trigger" />
-            <div class="portfolio-copy">
-              <strong>Salon / studio concept</strong>
-              <p>Stylish visuals, clear pricing areas, and a design that feels premium from the first click.</p>
+          <a href="retail.html" class="portfolio-link">
+            <div class="portfolio-link-inner">
+              <div>
+                <span class="portfolio-tag">Shops & storefronts</span>
+                <h3>Retail website</h3>
+                <p>Perfect for boutiques, retail stores, and product-based businesses wanting a stronger online presence and a polished brand feel.</p>
+              </div>
+              <div>
+                <div class="portfolio-preview" aria-hidden="true">
+                  <div class="preview-block"></div>
+                  <div class="preview-block"></div>
+                  <div class="preview-block"></div>
+                </div>
+                <div class="portfolio-arrow">View example <span>→</span></div>
+              </div>
             </div>
-          </div>
+          </a>
 
-          <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80" alt="Modern website mockup" class="lightbox-trigger" />
-            <div class="portfolio-copy">
-              <strong>Modern business layout</strong>
-              <p>Polished branding, simple navigation, and a clean interface that helps businesses stand out.</p>
+          <a href="style.html" class="portfolio-link">
+            <div class="portfolio-link-inner">
+              <div>
+                <span class="portfolio-tag">Beauty & grooming</span>
+                <h3>Style website</h3>
+                <p>Designed for barbers, salons, and style-focused brands that rely on strong visuals, premium presentation, and easy bookings.</p>
+              </div>
+              <div>
+                <div class="portfolio-preview" aria-hidden="true">
+                  <div class="preview-block"></div>
+                  <div class="preview-block"></div>
+                  <div class="preview-block"></div>
+                </div>
+                <div class="portfolio-arrow">View example <span>→</span></div>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -730,23 +831,27 @@
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
-    });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxClose = document.getElementById('lightboxClose');
 
-    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+    const showcaseImages = document.querySelectorAll('.showcase img');
+    showcaseImages.forEach(img => {
+      img.style.cursor = 'pointer';
       img.addEventListener('click', () => {
         lightboxImage.src = img.src;
         lightboxImage.alt = img.alt;
@@ -762,10 +867,15 @@
       lightboxImage.alt = '';
     }
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox) closeLightbox();
-    });
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+    }
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && lightbox.classList.contains('open')) {
